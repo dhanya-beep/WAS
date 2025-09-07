@@ -1,0 +1,31 @@
+ 1. File setup: use XAMPP:
+
+        1. Go to your XAMPP folder → `htdocs`.
+           (This is where web files should be placed.)
+        2. Create a new folder, e.g. `ajaxdemo/`.
+        3. Inside it, save the two files:
+        
+           * `ajaxex1.php`
+           * `index.html`
+
+            Your structure will look like:
+            htdocs/
+             └── ajaxdemo/
+                  ├── index.html
+                  └── ajaxex1.php
+2. Start the server
+
+      Open **XAMPP Control Panel** → Start **Apache**.
+
+3. Run in browser
+
+      Open your browser and go to: http://localhost/ajaxdemo/index.html
+
+
+4. Test it
+
+      Click **“Fetch Products”**.
+            * You should see:  
+              Product A - $19.99
+              Product B - $29.99
+              Product C - $14.99
