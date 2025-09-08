@@ -1,0 +1,58 @@
+
+
+### ✅ indexsession.php (session check + login form)
+
+```php
+<?php
+session_start();
+if (!empty($_SESSION['username'])) {
+  echo "Welcome back, {$_SESSION['username']}!";
+} else {
+  echo "<form action='loginsession.php' method='post'>
+          Username: <input type='text' name='username' required><br>
+          Password: <input type='password' name='password' required><br>
+          <input type='submit' value='Login'>
+        </form>";
+}
+```
+
+---
+
+### ✅ setcookie.php (set cookie)
+
+```php
+<?php
+setcookie("user_name", "Arjun", time()+86400, "/", "", false, true);
+echo "Cookie set!";
+```
+
+---
+
+### ✅ loginsession.php (login handler)
+
+```php
+<?php
+session_start();
+if ($_POST['username']==='admin' && $_POST['password']==='secret') {
+  $_SESSION['username'] = $_POST['username'];
+  $sid = uniqid();
+  setcookie("session_id", $sid, time()+3600, "/");
+  $_SESSION['session_id'] = $sid;
+  echo "Login successful!";
+  // header("Location: indexsession.php");
+} else {
+  echo "Invalid login.";
+}
+```
+
+---
+
+### ✅ getcookie.php (read cookie)
+
+```php
+<?php
+echo isset($_COOKIE["user_name"]) ? "Welcome back, {$_COOKIE['user_name']}!" : "No cookie found.";
+```
+
+---
+
