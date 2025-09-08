@@ -1,8 +1,12 @@
 <!DOCTYPE html>
 <html>
 <body>
-<button onclick="fetch('ajaxex1.php').then(r=>r.json()).then(d=>{
-  document.body.innerHTML += d.map(p=>`<div>${p.name} - $${p.price}</div>`).join('')
-})">Fetch Products</button>
+<button onclick="fetch('ajaxex1.php')
+  .then(r => r.json())
+  .then(d => {
+    d.forEach(p => {
+      document.body.innerHTML += p.name + ' - $' + p.price + '<br>';
+    });
+  })">Fetch Products</button>
 </body>
 </html>
